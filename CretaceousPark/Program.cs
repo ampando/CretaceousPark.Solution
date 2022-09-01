@@ -21,7 +21,6 @@ namespace CretaceousPark
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.useUrls("http://localhost:5004/")
                 });
     }
 }
