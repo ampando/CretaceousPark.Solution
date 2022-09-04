@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CretaceousPark.Migrations
 {
     [DbContext(typeof(CretaceousParkContext))]
-    [Migration("20220829051053_Initial")]
+    [Migration("20220904164033_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,43 @@ namespace CretaceousPark.Migrations
                     b.HasKey("AnimalId");
 
                     b.ToTable("Animals");
+
+                    b.HasData(
+                        new
+                        {
+                            AnimalId = 1,
+                            Age = 7,
+                            Name = "Matilda",
+                            Species = "Woolly Mammoth"
+                        },
+                        new
+                        {
+                            AnimalId = 2,
+                            Age = 10,
+                            Name = "Rexie",
+                            Species = "Dinosaur"
+                        },
+                        new
+                        {
+                            AnimalId = 3,
+                            Age = 2,
+                            Name = "Matilda",
+                            Species = "Dinosaur"
+                        },
+                        new
+                        {
+                            AnimalId = 4,
+                            Age = 4,
+                            Name = "Pip",
+                            Species = "Shark"
+                        },
+                        new
+                        {
+                            AnimalId = 5,
+                            Age = 22,
+                            Name = "Bartholomew",
+                            Species = "Dinosaur"
+                        });
                 });
 #pragma warning restore 612, 618
         }
