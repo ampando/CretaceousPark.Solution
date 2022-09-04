@@ -171,5 +171,19 @@ namespace CretaceousPark.Controllers
 
         return animal;
     }
+    [HttpDelete("{id}")]//Ultimately, the main difference between update and delete methods in a web application versus an API is the annotation. Remember that forms in HTML5 don't allow for PUT, PATCH or DELETE verbs.
+    public async Task<IActionResult> DeleteAnimal(int id)
+    {
+      var animal = await _db.Animals.FindAsync(id);
+      if (animal == null)
+      {
+        return NotFound();
+      }
+
+      _db.Animals.Remove(animal);
+      await _db.SaveChangesAsync();
+
+      return NoContent();
+    }
   }
 }
